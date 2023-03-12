@@ -51,15 +51,23 @@ cursor: pointer;
 
 .accordion_body {
     text-align: center;
-    }
-
-   .accordion_body details[open] div {
-        animation: accordion_body 1s;
-      }
-
-.accordion_title:hover+ .accordion_body{
-    display: block;
+    
 }
+.accordion_body::before{
+   content: attr(accordion_body);
+   transition: 0.5s all;
+   transition-property: transform;
+}
+
+.accordion_issue[open] .accordion_body{
+    transform: scale(0.75);
+    transition: 0.5s all;
+
+}
+
+/*.accordion_body:hover+ .accordion_issue{
+    display: block;
+}/*
 
 
 
