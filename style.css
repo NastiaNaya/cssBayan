@@ -50,8 +50,17 @@ cursor: pointer;
 }
 
 .accordion_body {
-text-align: center;
-overflow: hidden;
-display: block;
-transition: 0.4s all;
+    text-align: center;
+    }
+
+   .accordion_body details[open] div {
+        animation: accordion_body 1s;
+      }
+
+.accordion_title:hover+ .accordion_body{
+    display: block;
 }
+
+
+
+
