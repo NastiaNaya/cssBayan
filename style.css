@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: darkseagreen;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 100% auto;
+    margin-top: 0%;
+    width: 500px;
+}
+
+details > summary {
+    list-style: none;
+}
+
+.area {
+    display: inline-table;
+    width: 500px;
+}
+
+.accordion_issue {
+position: center;
+cursor: pointer;
+
+}
+
+.accordion_title {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    padding: 8px 50px 8px 1px;
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+.accordion_title::before {
+    display: block;
+    content: '🡇';
+    position: absolute;
+    right: 10px;
+    transform: translateY(-10%);
+    transition: 0.5s all;
+}
+.accordion_issue[open] .accordion_title::before {
+    transform: translateY(-10%) rotate(90deg);
+}
+
+.accordion_body {
+    text-align: center;
+    
+}
+.accordion_body::before{
+   content: attr(accordion_body);
+   transition: 0.5s all;
+   transition-property: transform;
+}
+
+.accordion_issue[open] .accordion_body{
+    transform: scale(0.75);
+    transition: 0.5s all;
+
+}
+
+/*.accordion_body:hover+ .accordion_issue{
+    display: block;
+}/*
+
+
+
+
